@@ -10,6 +10,60 @@ products.getAll = async (req, res) => {
     }
 }
 
+products.sortbyDate = async (req, res) => {
+    try {
+        const respone = await model.sortbyDate()
+        res.send(respone)
+    } catch (error) {
+        res.send(error)
+    }
+}
+
+products.sortbyName = async (req, res) => {
+    try {
+        const respone = await model.sortbyName()
+        res.send(respone)
+    } catch (error) {
+        res.send(error)
+    }
+}
+
+products.sortbyPriceASC = async (req, res) => {
+    try {
+        const respone = await model.sortbyPriceASC()
+        res.send(respone)
+    } catch (error) {
+        res.send(error)
+    }
+}
+
+products.sortbyPriceDESC = async (req, res) => {
+    try {
+        const respone = await model.sortbyPriceDESC()
+        res.send(respone)
+    } catch (error) {
+        res.send(error)
+    }
+}
+
+products.sortbyCategory = async (req, res) => {
+    try {
+        const respone = await model.sortbyCategory(req.params.name_category)
+        res.send(respone)
+    } catch (error) {
+        res.send(error)
+    }
+}
+
+products.searchbyName = async (req, res) => {
+    try {
+        const respone = await model.searchbyName(req.params.name_product)
+        res.send(respone)
+    } catch (error) {
+        res.send(error)
+    }
+}
+
 products.addData = async (req, res) => {
     try {
         const respone = await model.addData(req.body)

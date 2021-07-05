@@ -7,6 +7,12 @@ routing.post("/add",ctrl.addData);
 
 //READ --> GET
 routing.get("/all",ctrl.getAll);
+routing.get("/sort/name",ctrl.sortbyName);
+routing.get("/sort/date",ctrl.sortbyDate);
+routing.get("/sort/price/asc",ctrl.sortbyPriceASC);
+routing.get("/sort/price/desc",ctrl.sortbyPriceDESC);
+routing.get("/sort/category/:name_category", ctrl.sortbyCategory)
+routing.get("/search/:name_product", ctrl.searchbyName)
 
 //UPDATE --> PUT
 routing.put("/update",ctrl.updateData)

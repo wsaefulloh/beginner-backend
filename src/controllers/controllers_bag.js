@@ -1,5 +1,6 @@
 const bag = {}
 const model = require('../models/models_bag')
+
 bag.getAll = async (req, res) => {
     try {
         const respone = await model.getAll()

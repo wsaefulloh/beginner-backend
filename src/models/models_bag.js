@@ -3,7 +3,7 @@ const bag = {}
 
 bag.getAll = () => {
     return new Promise((resolve, reject) => {
-        db.query('SELECT * FROM public.bag ORDER BY id_product DESC')
+        db.query("SELECT id_bag_product, name_product, price_product, brand_product, count FROM public.bag JOIN public.detail_product ON public.bag.id_product = public.detail_product.id_product")
         .then((res) => {
             resolve(res.rows)
         }).catch((err) => {
@@ -14,7 +14,7 @@ bag.getAll = () => {
 
 bag.addData = (data) => {
     return new Promise((resolve, reject) => {
-        db.query('INSERT INTO public.bag (id_product, count) VALUES ($1, $2)', [data.id_product, data.count])
+        db.query('INSERT INTO public.bag (id_product, count, id_bag_product) VALUES ($1, $2, $3)', [data.id_product, data.count, data.id_product])
         .then((res) => {
             resolve(res)
         }).catch((err) => {
