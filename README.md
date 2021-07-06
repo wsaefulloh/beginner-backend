@@ -1,5 +1,5 @@
 <h1 align="center">RESTful API with Express</h1>
-<p align="center"><img src="https://miro.medium.com/max/1400/0*RDbjFZxjwF_JQWz-.jpg" width="500px" alt="NodeJS.jpg" /></p>
+<p align="center"><img src="https://miro.medium.com/max/1400/0*RDbjFZxjwF_JQWz-.jpg" width="350px" alt="NodeJS.jpg" /></p>
 <p align="center">
     <a href="https://en.wikipedia.org/wiki/Express.js" target="blank">More about Express</a>
 </p>
