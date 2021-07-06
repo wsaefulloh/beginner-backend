@@ -1,39 +1,40 @@
 const category = {}
 const model = require('../models/models_category')
+const respone = require('../helpers/respone')
 
 category.getAll = async (req, res) => {
     try {
-        const respone = await model.getAll()
-        res.send(respone)
+        const result = await model.getAll()
+        return respone(res, 200, result)
     } catch (error) {
-        res.send(error)
+        return respone(res, 500, error)
     }
 }
 
 category.addData = async (req, res) => {
     try {
-        const respone = await model.addData(req.body)
-        res.send('Successfully Added Product')
+        const result = await model.addData(req.body)
+        return respone(res, 201, 'Successfully Added Product')
     } catch (error) {
-        res.send(error)
+        return respone(res, 500, error)
     }
 }
 
 category.updateData = async (req, res) => {
     try {
-        const respone = await model.updateData(req.body)
-        res.send('Update Product Success')
+        const result = await model.updateData(req.body)
+        return respone(res, 201, 'Update Product Success')
     } catch (error) {
-        res.send(error)
+        return respone(res, 500, error)
     }
 }
 
 category.removeData = async (req, res) => {
     try {
-        const respone = await model.removeData(req.params.id_category)
-        res.send('Delete Success')
+        const result = await model.removeData(req.params.id_category)
+        return respone(res, 200, 'Delete Success')
     } catch (error) {
-        res.send(error)
+        return respone(res, 500, error)
     }
 }
 
