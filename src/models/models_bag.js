@@ -3,7 +3,7 @@ const bag = {}
 
 bag.getAll = () => {
     return new Promise((resolve, reject) => {
-        db.query("ELECT id_bag_product, name_product, price_product, brand_product, count FROM public.bag JOIN public.detail_product ON public.bag.id_product = public.detail_product.id_product")
+        db.query("SELECT id_bag_product, name_product, price_product, brand_product, count FROM public.bag JOIN public.detail_product ON public.bag.id_product = public.detail_product.id_product")
         .then((res) => {
             resolve(res.rows)
         }).catch((err) => {
