@@ -10,6 +10,13 @@
 [![Node.js](https://img.shields.io/badge/Node.js-v.12.13-green.svg?style=rounded-square)](https://nodejs.org/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-v.13.3-blue.svg?style=rounded-square)](https://www.postgresql.org/)
 
+## Feature
+- CRUD Category
+- CRUD Product
+- CRUD Bag
+- Search Product Name
+- Filter Product Name, Category, Date Update, and Price order by ASC or DESC
+
 ## Installation Steps
 
 1. Clone the repository
@@ -31,6 +38,10 @@ npm start
 ```
 
 4. You are all set!
+
+```bash
+View the website at: http://localhost:9000
+```
 
 ## End Point
 
