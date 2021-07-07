@@ -11,9 +11,10 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-v.13.3-blue.svg?style=rounded-square)](https://www.postgresql.org/)
 
 ## Feature
-- CRUD Category
 - CRUD Product
+- CRUD Category
 - CRUD Bag
+- MVC Models
 - Search Product Name
 - Filter Product Name, Category, Date Update, and Price order by ASC or DESC
 
