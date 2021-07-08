@@ -3,7 +3,7 @@ const bag = {}
 
 bag.getAll = () => {
     return new Promise((resolve, reject) => {
-        db.query("SELECT id_bag_product, name_product, price_product, brand_product, count FROM public.bag JOIN public.detail_product ON public.bag.id_product = public.detail_product.id_product")
+        db.query("SELECT id_bag, name_product, price_product, brand_product, count FROM public.bag JOIN public.detail_product ON public.bag.id_product = public.detail_product.id_product")
         .then((res) => {
             resolve(res.rows)
         }).catch((err) => {
@@ -14,7 +14,7 @@ bag.getAll = () => {
 
 bag.addData = (data) => {
     return new Promise((resolve, reject) => {
-        db.query('INSERT INTO public.bag (id_product, count, id_bag_product) VALUES ($1, $2, $3)', [data.id_product, data.count, data.id_product])
+        db.query('INSERT INTO public.bag (id_product, count) VALUES ($1, $2)', [data.id_product, data.count])
         .then((res) => {
             resolve(res)
         }).catch((err) => {
@@ -25,7 +25,7 @@ bag.addData = (data) => {
 
 bag.updateData = (data) => {
     return new Promise((resolve, reject) => {
-        db.query("UPDATE public.bag SET count = $1 WHERE id_product = $2",[data.count, data.id_product])
+        db.query("UPDATE public.bag SET count = $1 WHERE id_bag = $2",[data.count, data.id_bag])
         .then((res) => {
             resolve(res)
         }).catch((err) => {
@@ -36,7 +36,7 @@ bag.updateData = (data) => {
 
 bag.removeData = (id) => {
     return new Promise((resolve, reject) => {
-        db.query(`DELETE FROM public.bag WHERE id_product = ${id}`)
+        db.query(`DELETE FROM public.bag WHERE id_bag = ${id}`)
         .then((res) => {
             resolve(res)
         }).catch((err) => {
