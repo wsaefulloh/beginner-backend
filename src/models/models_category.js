@@ -7,7 +7,7 @@ category.getAll = () => {
         .then((res) => {
             resolve(res.rows)
         }).catch((err) => {
-            reject(err)
+            reject(err.message)
         });
     })
 }
@@ -16,9 +16,9 @@ category.addData = (data) => {
     return new Promise((resolve, reject) => {
         db.query('INSERT INTO category (name_category, id_category, id_category_product) VALUES ($1, $2, $3)', [data.name_category, data.id_category, data.id_category])
         .then((res) => {
-            resolve(res)
+            resolve('Add category success')
         }).catch((err) => {
-            reject(err)
+            reject(err.message)
         });
     })
 }
@@ -27,9 +27,9 @@ category.updateData = (data) => {
     return new Promise((resolve, reject) => {
         db.query("UPDATE public.category SET name_category = $1 WHERE id_category = $2",[data.name_category, data.id_category])
         .then((res) => {
-            resolve(res)
+            resolve('Update category success')
         }).catch((err) => {
-            reject(err)
+            reject(err.message)
         });
     })
 }
@@ -38,9 +38,9 @@ category.removeData = (id) => {
     return new Promise((resolve, reject) => {
         db.query(`DELETE FROM public.category WHERE id_category = ${id}`)
         .then((res) => {
-            resolve(res)
+            resolve('Delete category success')
         }).catch((err) => {
-            reject(err)
+            reject(err.message)
         });
     })
 }

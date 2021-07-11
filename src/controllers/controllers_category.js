@@ -14,7 +14,7 @@ category.getAll = async (req, res) => {
 category.addData = async (req, res) => {
     try {
         const result = await model.addData(req.body)
-        return respone(res, 201, 'Successfully Added Product')
+        return respone(res, 201, result)
     } catch (error) {
         return respone(res, 500, error)
     }
@@ -23,7 +23,7 @@ category.addData = async (req, res) => {
 category.updateData = async (req, res) => {
     try {
         const result = await model.updateData(req.body)
-        return respone(res, 201, 'Update Product Success')
+        return respone(res, 201, result)
     } catch (error) {
         return respone(res, 500, error)
     }
@@ -32,7 +32,7 @@ category.updateData = async (req, res) => {
 category.removeData = async (req, res) => {
     try {
         const result = await model.removeData(req.params.id_category)
-        return respone(res, 200, 'Delete Success')
+        return respone(res, 200, result)
     } catch (error) {
         return respone(res, 500, error)
     }
