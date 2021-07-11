@@ -8,21 +8,21 @@ const respone = require('./helpers/respone')
 
 routing.use('/product', product)
 routing.use('/product/*',(req,res) => {
-    return respone(res, 404)
+    return respone(res, 404, 'Alamat URL yang anda masukkan salah')
 })
 
 routing.use('/category', category)
 routing.use('/category/*',(req,res) => {
-    return respone(res, 404)
+    return respone(res, 404, 'Alamat URL yang anda masukkan salah')
 })
 
 routing.use('/bag', bag)
 routing.use('/bag/*',(req,res) => {
-    return respone(res, 404)
+    return respone(res, 404, 'Alamat URL yang anda masukkan salah')
 })
 
 routing.use('*',(req,res) => {
-    return respone(res, 404)
+    return respone(res, 404, 'Alamat URL yang anda masukkan salah')
 })
 
 module.exports = routing

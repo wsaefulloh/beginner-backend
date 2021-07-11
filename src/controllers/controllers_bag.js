@@ -14,7 +14,7 @@ bag.getAll = async (req, res) => {
 bag.addData = async (req, res) => {
     try {
         const result = await model.addData(req.body)
-        return respone(res, 201, 'Successfully Added Product to Bag')
+        return respone(res, 200, result)
     } catch (error) {
         return respone(res, 500, error)
     }
@@ -23,7 +23,7 @@ bag.addData = async (req, res) => {
 bag.updateData = async (req, res) => {
     try {
         const result = await model.updateData(req.body)
-        return respone(res, 201, 'Update Bag Success')
+        return respone(res, 201, result)
     } catch (error) {
         return respone(res, 500, error)
     }
@@ -31,8 +31,8 @@ bag.updateData = async (req, res) => {
 
 bag.removeData = async (req, res) => {
     try {
-        const result = await model.removeData(req.params.id_product)
-        return respone(res, 200, 'Delete Success')
+        const result = await model.removeData(req.params.id_bag)
+        return respone(res, 200, result)
     } catch (error) {
         return respone(res, 500, error)
     }

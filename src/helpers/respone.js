@@ -33,7 +33,7 @@ function respone(res, status, result = "") {
     const result_respone = {
         status: status,
         description: desc,
-        data: result
+        result: result
     }
 
     res.status(status).json(result_respone)

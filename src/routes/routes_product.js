@@ -12,7 +12,7 @@ routing.get("/sort/date",ctrl.sortbyDate);
 routing.get("/sort/price/asc",ctrl.sortbyPriceASC);
 routing.get("/sort/price/desc",ctrl.sortbyPriceDESC);
 routing.get("/sort/category/:name_category", ctrl.sortbyCategory)
-routing.get("/search/:name_product", ctrl.searchbyName)
+routing.get("/search", ctrl.searchbyName)
 
 //UPDATE --> PUT
 routing.put("/update",ctrl.updateData)

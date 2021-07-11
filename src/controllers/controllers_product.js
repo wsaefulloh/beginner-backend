@@ -58,7 +58,7 @@ products.sortbyCategory = async (req, res) => {
 
 products.searchbyName = async (req, res) => {
     try {
-        const result = await model.searchbyName(req.params.name_product)
+        const result = await model.searchbyName(req.query.name_product)
         return respone(res, 200, result)
     } catch (error) {
         return respone(res, 500, error)
@@ -68,7 +68,7 @@ products.searchbyName = async (req, res) => {
 products.addData = async (req, res) => {
     try {
         const result = await model.addData(req.body)
-        return respone(res, 201, 'Add Product Success')
+        return respone(res, 201, result)
     } catch (error) {
         return respone(res, 500, error)
     }
@@ -77,7 +77,7 @@ products.addData = async (req, res) => {
 products.updateData = async (req, res) => {
     try {
         const result = await model.updateData(req.body)
-        return respone(res, 201, 'Update Product Success')
+        return respone(res, 201, result)
     } catch (error) {
         return respone(res, 500, error)
     }
@@ -86,7 +86,7 @@ products.updateData = async (req, res) => {
 products.removeData = async (req, res) => {
     try {
         const result = await model.removeData(req.params.id_product)
-        return respone(res, 200, 'Delete Success')
+        return respone(res, 200, result)
     } catch (error) {
         return respone(res, 500, error)
     }

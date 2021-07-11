@@ -12,6 +12,6 @@ routing.get("/all",ctrl.getAll);
 routing.put("/update",ctrl.updateData)
 
 //DELETE --> DELETE
-routing.delete("/del/:id_product", ctrl.removeData)
+routing.delete("/del/:id_bag", ctrl.removeData)
 
 module.exports = routing;
