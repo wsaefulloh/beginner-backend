@@ -14,7 +14,7 @@ category.getAll = () => {
 
 category.addData = (data) => {
     return new Promise((resolve, reject) => {
-        db.query('INSERT INTO category (name_category, id_category, id_category_product) VALUES ($1, $2, $3)', [data.name_category, data.id_category, data.id_category])
+        db.query('INSERT INTO category (name_category, id_category) VALUES ($1, $2)', [data.name_category, data.id_category])
         .then((res) => {
             resolve('Add category success')
         }).catch((err) => {
