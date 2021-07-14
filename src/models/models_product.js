@@ -130,27 +130,9 @@ products.sortbyCategory = (category) => {
     return new Promise((resolve, reject) => {
         db.query(`SELECT public.detail_product.*, public.category.name_category AS category_name FROM public.detail_product INNER JOIN public.category ON public.detail_product.id_category = public.category.id_category WHERE name_category ILIKE '%${category}%' ORDER BY date_update DESC`)
         .then((res) => {
-            if (res.rowsCount){
-                const productJSON = res.rows
-                const dataProduct = productJSON.map((data) => {
-                const object = {
-                    id : data.id_product,
-                    name : data.name_product,
-                    category : data.category_name,
-                    brand : data.brand_product,
-                    store : data.store_name,
-                    price : data.price_product,
-                    create : data.date_create,
-                    update : data.date_update
-                }
-                return object;
-            })
-            resolve(dataProduct)
-            } else {
-                resolve({message: 'category not found!'})
-            }
+            resolve(res.rows)
         }).catch((err) => {
-            reject(err.message)
+            reject(err)
         });
     })
 }
@@ -159,27 +141,9 @@ products.searchbyName = (name) => {
     return new Promise((resolve, reject) => {
         db.query(`SELECT public.detail_product.*, public.category.name_category AS category_name FROM public.detail_product INNER JOIN public.category ON public.detail_product.id_category = public.category.id_category WHERE name_product ILIKE '%${name}%' ORDER BY date_update DESC`)
         .then((res) => {
-            if (res.rowsCount){
-                const productJSON = res.rows
-                const dataProduct = productJSON.map((data) => {
-                const object = {
-                    id : data.id_product,
-                    name : data.name_product,
-                    category : data.category_name,
-                    brand : data.brand_product,
-                    store : data.store_name,
-                    price : data.price_product,
-                    create : data.date_create,
-                    update : data.date_update
-                }
-                return object;
-            })
-            resolve(dataProduct)
-            } else {
-                resolve({message: 'product not found!'})
-            }
+            resolve(res.rows)
         }).catch((err) => {
-            reject(err.message)
+            reject(err)
         });
     })
 }
